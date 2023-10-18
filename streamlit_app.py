@@ -30,6 +30,8 @@ import snowflake.connector
 streamlit.dataframe(fruityvice_normalized)
 streamlit.text(fruityvice_response.json())
 
+
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
